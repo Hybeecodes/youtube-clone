@@ -3,7 +3,7 @@ import React from 'react';
 const VideoItem = ({video, handleVideoSelect}) => {
   console.log(video)
     return (
-        <div className="card horizontal" onClick={handleVideoSelect}>
+        <div className="card horizontal videoItem" onClick={() => handleVideoSelect(video)}>
           <div className="card-image">
             <img src={video.snippet.thumbnails.medium.url} alt={video.snippet.title} width={video.snippet.thumbnails.medium.width} height={video.snippet.thumbnails.medium.height}/>
           </div>

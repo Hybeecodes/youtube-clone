@@ -20,8 +20,6 @@ class App extends Component {
     })
   }
 
-  defaultVideo = "https://www.youtube.com/watch?v=aCMbSyngXB4";
-
   handleSubmit = async(query) => {
     const response = await youtube.get('/search',{
       params:{
@@ -34,22 +32,14 @@ class App extends Component {
     })
   };
 
-  componentDidMount(){
-    this.setState({
-      selectedVideo: this.defaultVideo
-    })
-  }
-
   render() {
     return (
-      <div className="App row container">
+      <div className="App container">
       <br />
         <Searchbar handleFormSubmit= {this.handleSubmit} />
-        <div className="col s8">
-        <CurrentVideo video={this.state.selectedVideo} />
-        </div>
-        <div className="col s4">
-          <VideoList videos={this.state.videos} />
+        <CurrentVideo selectedVideo={this.state.selectedVideo} />
+        <div>
+          <VideoList handleSelectedVideo={this.handleSelectedVideo} videos={this.state.videos} />
           {/* <VideoItem /> */}
         </div>
       </div>

@@ -7,9 +7,14 @@
   height: 40vmin;
   pointer-events: none;
 }
+ 
 
 .desc {
   font-size: 10px;
+}
+
+.videoItem {
+  cursor: pointer;
 }
 
 .App-header {
